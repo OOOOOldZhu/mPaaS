@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.alipay.apollo.baseline.config'
 
 android {
     compileSdkVersion 30
@@ -7,10 +8,13 @@ android {
     defaultConfig {
         applicationId "com.zhu.mpaas"
         minSdkVersion 19
-        targetSdkVersion 30
+//        接入第1步
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-
+        ndk{
+            abiFilters 'armeabi'
+        }
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -23,9 +27,22 @@ android {
 }
 
 dependencies {
+    implementation platform("com.mpaas.android:$mpaas_artifact:$mpaas_baseline")
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.mpaas.android:essential'
+    implementation 'com.mpaas.android:framework'
+    implementation 'com.mpaas.android:configservice'
+    implementation 'com.mpaas.android:media'
+    implementation 'com.mpaas.android:nebula'
+    implementation 'com.mpaas.android:push'
+    implementation 'com.mpaas.android:tinyapp'
+    implementation 'com.mpaas.android:tinyapp-media'
+    implementation 'com.mpaas.android:tinyapp-scan'
+    implementation 'com.mpaas.android:tinyapp-video'
+    implementation 'com.mpaas.android:uccore'
+    implementation 'com.mpaas.android:upgrade'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
