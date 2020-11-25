@@ -1,7 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.alipay.apollo.baseline.config'
 
+//支持lamda
+apply plugin: 'me.tatarka.retrolambda'
+
 android {
+    //支持lamda
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -49,4 +57,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    //权限申请
+    implementation 'com.github.tbruyelle:rxpermissions:0.12'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.4'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
 }
