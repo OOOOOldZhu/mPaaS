@@ -1,9 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.alipay.apollo.baseline.config'
 
-//支持lamda
-apply plugin: 'me.tatarka.retrolambda'
-
 android {
     //支持lamda
     compileOptions {
