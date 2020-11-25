@@ -1,14 +1,14 @@
-package com.zhu.mpaas;
+package com.zhu.mpaas.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.alipay.mobile.framework.quinoxless.QuinoxlessPrivacyUtil;
 import com.mpaas.nebula.adapter.api.MPNebula;
 import com.tbruyelle.rxpermissions3.RxPermissions;
+import com.zhu.mpaas.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.main_btn1).setOnClickListener(v -> {
             MPNebula.startUrl("https://tech.antfin.com/");
         });
+        findViewById(R.id.main_btn2).setOnClickListener(v -> {
+            MPNebula.startUrl("https://mcube-prod.oss-cn-hangzhou.aliyuncs.com/570DA89281533-default/80000000/1.0.0.1_all/nebula/fallback/h5_to_native.html");
+        });
+
     }
 
     private void requestPermissions() {

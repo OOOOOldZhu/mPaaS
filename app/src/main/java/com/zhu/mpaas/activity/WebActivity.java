@@ -1,8 +1,10 @@
-package com.zhu.mpaas;
+package com.zhu.mpaas.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.zhu.mpaas.R;
 
 public class WebActivity extends AppCompatActivity {
 
