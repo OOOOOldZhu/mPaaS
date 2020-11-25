@@ -18,6 +18,13 @@
         android:id="@+id/main_btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="线上网页互调" />
+
+    <Button
+        android:id="@+id/main_btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="打开离线包" />
+
 
 </LinearLayout>
