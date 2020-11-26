@@ -1,0 +1,30 @@
+{
+	"config":{
+		"updateReqRate":16400,
+		"limitReqRate":13600,
+		"appPoolLimit":3,
+		"versionRefreshRate":86400
+	},
+	"data":[
+		{
+			"app_desc":"最简单的网页测试",
+			"app_id":"20201126",
+			"auto_install":1,
+			"fallback_base_url":"https://mcube-prod.oss-cn-hangzhou.aliyuncs.com/ONEXC45D22D241716-default/20201126/0.0.0.2_all/nebula/fallback/",
+			"global_pack_url":"",
+			"icon_url":"",
+			"installType":1,
+			"main_url":"/www/index.html",
+			"name":"最简单的网页测试",
+			"online":1,
+			"package_url":"https://mcube-prod.oss-cn-hangzhou.aliyuncs.com/ONEXC45D22D241716-default/20201126/0.0.0.2_all/nebula/20201126_0.0.0.2.amr",
+			"patch":"",
+			"sub_url":"",
+			"version":"0.0.0.2",
+			"vhost":"https://20201126.zhu.com"
+		}
+	],
+	"resultCode":100,
+	"resultMsg":"操作成功",
+	"state":"success"
+}

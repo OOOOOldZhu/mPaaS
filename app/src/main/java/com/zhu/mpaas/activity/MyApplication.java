@@ -6,6 +6,7 @@ import android.content.Context;
 import com.alipay.mobile.framework.quinoxless.IInitCallback;
 import com.alipay.mobile.framework.quinoxless.QuinoxlessFramework;
 import com.mpaas.nebula.adapter.api.MPNebula;
+import com.mpaas.nebula.adapter.api.MPNebulaOfflineInfo;
 import com.zhu.mpaas.util.MyJSApiPlugin;
 
 public class MyApplication extends Application {
@@ -21,10 +22,13 @@ public class MyApplication extends Application {
                 // 在这里开始使用mPaaS功能
                 //调用registerCustomJsapi()完成自定义 JSAPI的注册。
                 registerCustomJsapi();
+
+                loadOfflineNebula();
             }
         });
     }
-    private void registerCustomJsapi(){
+
+    private void registerCustomJsapi() {
         MPNebula.registerH5Plugin(
                 // 插件的 class name
                 MyJSApiPlugin.class.getName(),
@@ -34,6 +38,17 @@ public class MyApplication extends Application {
                 "page",
                 // 注册的 jsapi 名称
                 new String[]{"myapi"});
+    }
+
+    private void loadOfflineNebula() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // 此方法为阻塞调用，请不要在主线程上调用内置离线包方法。如果内置多个amr包，要确保文件已存在，如不存在，会造成其他内置离线包失败。
+                // 此方法仅能调用一次，多次调用仅第一次调用有效。
+                MPNebula.loadOfflineNebula("h5_json.json", new MPNebulaOfflineInfo("20201126_0.0.0.2.amr", "20201126", "0.0.0.2"));
+            }
+        }).start();
     }
 
     @Override

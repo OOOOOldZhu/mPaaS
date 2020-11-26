@@ -26,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.main_btn2).setOnClickListener(v -> {
             MPNebula.startUrl("https://mcube-prod.oss-cn-hangzhou.aliyuncs.com/570DA89281533-default/80000000/1.0.0.1_all/nebula/fallback/h5_to_native.html");
         });
-
+        findViewById(R.id.main_btn3).setOnClickListener(v -> {
+            MPNebula.startApp("20201126");
+        });
     }
 
     private void requestPermissions() {
